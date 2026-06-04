@@ -1,0 +1,25 @@
+# Virtual Environment
+venv/
+finance_agent/venv/
+
+# Local Environment Secrets
+.env
+finance_agent/.env
+
+# Python Cache
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Generated Outputs
+output/
+finance_agent/output/
+temp_carousel.html
+finance_agent/temp_carousel.html
+
+# IDE Files
+.vscode/
+.idea/
+.gemini/

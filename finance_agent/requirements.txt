@@ -1,0 +1,24 @@
+# Feed parser for RSS news scraping from Moneycontrol, Economic Times, Mint
+feedparser==6.0.11
+
+# Reddit API Client for r/IndiaInvestments scraping
+praw==7.7.1
+
+# Groq LLM Agent Integration
+langchain-core==0.2.5
+langchain-groq==0.1.5
+
+# Environment variables loading
+python-dotenv==1.0.1
+
+# Telegram bot integration for carousel preview and approval flow
+python-telegram-bot==21.2
+
+# Canva Connect API and Instagram Graph API HTTP requests
+requests==2.32.3
+
+# Color coding for terminal logger outputs
+colorama==0.4.6
+
+# Playwright for local slide HTML to PNG rendering
+playwright==1.44.0
