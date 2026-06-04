@@ -59,14 +59,17 @@ class TelegramApprovalBot:
             query = update.callback_query
             await query.answer()
             
+            # Extract name of user who clicked
+            user_name = query.from_user.first_name or "Someone"
+            
             if query.data == "approve":
                 self.approval_result = True
-                logger.info("User clicked: APPROVE & POST")
-                await query.edit_message_text(text="✅ **Approved!** Auto-publishing carousel to Instagram now...")
+                logger.info(f"User {user_name} clicked: APPROVE & POST")
+                await query.edit_message_text(text=f"✅ **Approved by {user_name}!** Auto-publishing carousel to Instagram now...")
             elif query.data == "reject":
                 self.approval_result = False
-                logger.info("User clicked: REJECT & CANCEL")
-                await query.edit_message_text(text="❌ **Rejected.** The publishing flow has been cancelled.")
+                logger.info(f"User {user_name} clicked: REJECT & CANCEL")
+                await query.edit_message_text(text=f"❌ **Rejected by {user_name}.** The publishing flow has been cancelled.")
 
         # Register callback query handler
         application.add_handler(CallbackQueryHandler(handle_approval_click))
