@@ -2,8 +2,8 @@ name: Daily Finance Carousel Automation
 
 on:
   schedule:
-    # Run daily at 3:00 AM UTC (8:30 AM IST - morning update before market opens)
-    - cron: '0 3 * * *'
+    # Run daily at 3:10 AM UTC (8:40 AM IST - shifted off-hour for better scheduler reliability)
+    - cron: '10 3 * * *'
   workflow_dispatch:
     # Allows manual triggering from the GitHub Actions tab
 
