@@ -393,29 +393,29 @@ class CanvaBuilder:
                 }}
                 .news-headline {{
                     font-family: 'Playfair Display', serif;
-                    font-size: 44px;
+                    font-size: 54px;
                     line-height: 1.25;
                     font-weight: 700;
                     color: #FAF8F6;
-                    margin-bottom: 15px;
+                    margin-bottom: 20px;
                     letter-spacing: -0.5px;
                     border-left: 5px solid #D4AF37;
                     padding-left: 20px;
                     background: rgba(0, 0, 0, 0.55);
-                    padding-top: 8px;
-                    padding-bottom: 8px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
                     border-radius: 0 8px 8px 0;
                 }}
                 .news-body {{
                     font-family: 'Inter', sans-serif;
-                    font-size: 21px;
-                    line-height: 1.55;
+                    font-size: 25px;
+                    line-height: 1.6;
                     color: #D1D5DB;
                     font-weight: 400;
                     background: rgba(0, 0, 0, 0.55);
-                    padding: 12px 18px;
+                    padding: 15px 20px;
                     border-radius: 8px;
-                    margin-bottom: 15px;
+                    margin-bottom: 20px;
                 }}
                 .news-source {{
                     font-family: 'Inter', sans-serif;

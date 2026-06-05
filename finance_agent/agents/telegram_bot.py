@@ -48,8 +48,10 @@ class TelegramApprovalBot:
         """
         logger.info(f"Preparing Telegram preview for Chat ID: {self.chat_id}")
         
-        # 1. Build the telegram application instance
-        application = ApplicationBuilder().token(self.bot_token).build()
+        # 1. Build the telegram application instance with custom request timeouts (30s connect/read)
+        from telegram.request import HTTPXRequest
+        request = HTTPXRequest(connect_timeout=30.0, read_timeout=30.0)
+        application = ApplicationBuilder().token(self.bot_token).request(request).build()
         
         # Reset approval state
         self.approval_result = None

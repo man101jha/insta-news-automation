@@ -111,6 +111,15 @@ class FilterAgent:
             if not isinstance(selected_stories, list):
                 raise ValueError("LLM did not return a JSON list.")
                 
+            # Attach original descriptions to the selected stories for detailed copywriting
+            for story in selected_stories:
+                story_title_norm = " ".join(story.get("title", "").lower().split())
+                for original_art in articles_to_evaluate:
+                    original_title_norm = " ".join(original_art.get("title", "").lower().split())
+                    if story_title_norm == original_title_norm or original_title_norm in story_title_norm or story_title_norm in original_title_norm:
+                        story["description"] = original_art.get("description", "")
+                        break
+            
             logger.info(f"Successfully filtered and retrieved top {len(selected_stories)} stories.")
             return selected_stories
             
