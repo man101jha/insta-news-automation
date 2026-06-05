@@ -393,7 +393,7 @@ class CanvaBuilder:
                 }}
                 .news-headline {{
                     font-family: 'Playfair Display', serif;
-                    font-size: 54px;
+                    font-size: 60px;
                     line-height: 1.25;
                     font-weight: 700;
                     color: #FAF8F6;
@@ -408,7 +408,7 @@ class CanvaBuilder:
                 }}
                 .news-body {{
                     font-family: 'Inter', sans-serif;
-                    font-size: 25px;
+                    font-size: 30px;
                     line-height: 1.6;
                     color: #D1D5DB;
                     font-weight: 400;
