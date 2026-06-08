@@ -1,0 +1,59 @@
+🚀 Automating My Daily Financial Instagram Carousels Using AI Agents! 📈
+
+I wanted a way to curate, write, design, review, and post daily Indian financial news to Instagram on autopilot. So, I built a multi-agent system from scratch using Python, Groq LLM, and Playwright, and scheduled it on GitHub Actions!
+
+Here is how the automated workflow behaves every morning at 8:40 AM IST:
+
+🔍 1. Scraping: A News Scraper collects recent headlines from Economic Times Markets, Livemint, Moneycontrol, and r/IndiaInvestments.
+🧠 2. AI Curation: A Groq LLM agent (llama-3.3-70b-versatile) filters the top 5 most actionable stories for retail investors.
+✍️ 3. Copywriting: An LLM copywriter agent structures a 7-slide deck copy (detailed 7-8 lines paragraph summaries with metric tags).
+🎨 4. Design & Render: Playwright parses HTML/CSS to screenshot 1080x1080px dark-slate slides. It dynamically scrapes the original article images (using og:image tags) for background overlays.
+💬 5. Human-in-the-Loop: Previews are sent to a private Telegram Group. Any admin can click "Approve" or "Reject" with live user attribution (e.g. "Approved by Mangesh").
+📸 6. Publish: Once approved, the poster posts the carousel to Instagram via the Graph API and purges local temp images.
+
+---
+
+### 🛠️ System Flow Diagram:
+
+[ RSS Feeds & Reddit ] ──> ( News Scraper )
+                               │
+                               ▼ [ 80+ Raw Articles ]
+                        ( Groq Filter LLM ) ──> [ Filters & Scores ]
+                               │
+                               ▼ [ Top 5 Retail Stories ]
+                        ( Carousel Writer ) ──> [ Slide Copy JSON ]
+                               │
+                               ▼ [ 7-Slide Deck Copy ]
+                        ( Playwright Builder ) ──> [ Scrapes Web Images & Renders PNGs ]
+                               │
+                               ▼ [ Local Images Cache ]
+                        ( Telegram Bot Approval )
+                          ├── [ REJECTED ] ──> ❌ Abort & Cleanup
+                          └── [ APPROVED ]
+                               │
+                               ▼
+                        ( Instagram Poster ) ──> 🚀 Published Live to IG!
+
+---
+
+### 📂 Repository Structure:
+
+insta-automation/
+├── .github/workflows/daily_run.yml    # GitHub Actions 8:40 AM IST Scheduler
+├── .gitignore                         # Excludes secrets & virtualenvs
+└── finance_agent/
+    ├── main.py                        # Orchestrator & Try...Finally Cleanup
+    ├── agents/
+    │   ├── news_scraper.py            # RSS & Reddit Parser
+    │   ├── filter_agent.py            # LLM Scoring Agent
+    │   ├── carousel_writer.py         # Copywriter Agent
+    │   ├── canva_builder.py           # Playwright Slide Generator
+    │   ├── telegram_bot.py            # Polling bot with clicker logging
+    │   └── instagram_poster.py        # Meta Graph API publisher
+    └── requirements.txt               # Dependencies
+
+If you are looking to build multi-agent automation pipelines with human-in-the-loop triggers, check out the full source code and setup guides on my GitHub!
+
+💻 GitHub Repository: https://github.com/man101jha/insta-news-automation
+
+#python #ai #artificialintelligence #agents #automation #githubactions #instagramapi #groq #playwright #softwareengineering #opensource

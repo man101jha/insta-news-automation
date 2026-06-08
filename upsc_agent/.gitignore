@@ -1,0 +1,14 @@
+# Environment variables
+.env
+
+# Output and caches
+output/
+.playwright/
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+.idea/
+.vscode/
