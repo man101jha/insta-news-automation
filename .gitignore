@@ -5,6 +5,8 @@ finance_agent/venv/
 # Local Environment Secrets
 .env
 finance_agent/.env
+upsc_agent/.env
+**/.env
 
 # Python Cache
 __pycache__/
@@ -16,6 +18,9 @@ __pycache__/
 # Generated Outputs
 output/
 finance_agent/output/
+upsc_agent/upsc_agent/output/
+**/output/
+**/.playwright/
 temp_carousel.html
 finance_agent/temp_carousel.html
 
